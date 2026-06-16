@@ -3,13 +3,14 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --brand: #1a1a2e;
-  --accent: #4f6ef7;
+  --brand: #4B00B2;
+  --accent: #9A29E2;
+  --accent-dark: #4B00B2;
   --text: #1a1a2e;
   --muted: #6b7280;
   --border: #e5e7eb;
   --bg: #ffffff;
-  --bg-soft: #f9fafb;
+  --bg-soft: #F7F4FC;
 }
 
 body {
@@ -34,7 +35,7 @@ nav {
 }
 
 .nav-logo-img {
-  height: 48px;
+  height: 68px;
   width: auto;
   display: block;
 }
@@ -79,6 +80,7 @@ nav a.nav-link:hover { color: var(--text); }
   margin: 2.5rem 0 0.75rem;
   padding-top: 0.5rem;
   border-top: 1px solid var(--border);
+  color: #4B00B2;
 }
 
 .legal-body h2:first-child { border-top: none; margin-top: 0; }
@@ -95,13 +97,13 @@ nav a.nav-link:hover { color: var(--text); }
 .legal-body a { color: var(--accent); }
 
 .notice-box {
-  background: #eff6ff;
-  border: 1px solid #bfdbfe;
+  background: #F0E8FA;
+  border: 1px solid #DDACDD;
   border-radius: 8px;
   padding: 1rem 1.25rem;
   margin: 1.5rem 0;
   font-size: 0.95rem;
-  color: #1e40af;
+  color: #4B00B2;
 }
 
 /* FOOTER */
