@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kệ — Mockup Preview</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: #f0ecf8; padding: 3rem 2rem; color: #1a1a2e; }
+    h1 { font-size: 1.4rem; font-weight: 700; margin-bottom: 0.25rem; }
+    .page-meta { color: #6b7280; font-size: 0.85rem; margin-bottom: 3rem; }
+    .mockup-block { margin-bottom: 4rem; }
+    .mockup-label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #9A29E2; margin-bottom: 0.75rem; }
+    .mockup-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 1.25rem; }
+
+    /* ── DEVICE FRAMES ── */
+    .ipad-frame {
+      background: #1c1c1e;
+      border-radius: 20px;
+      padding: 18px;
+      box-shadow: 0 20px 60px rgba(74,0,178,0.25), 0 4px 16px rgba(0,0,0,0.3);
+      display: inline-block;
+    }
+    .ipad-screen {
+      background: #0f0f1a;
+      border-radius: 10px;
+      overflow: hidden;
+      width: 320px;
+    }
+    .macbook-frame {
+      background: #d1d5db;
+      border-radius: 12px 12px 0 0;
+      padding: 12px 12px 0;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+      display: inline-block;
+    }
+    .macbook-screen {
+      background: #fff;
+      border-radius: 6px 6px 0 0;
+      overflow: hidden;
+      width: 480px;
+    }
+    .macbook-base {
+      background: #9ca3af;
+      height: 14px;
+      border-radius: 0 0 8px 8px;
+      margin-top: 0;
+    }
+    .macbook-stand {
+      background: #6b7280;
+      height: 6px;
+      width: 120px;
+      margin: 0 auto;
+      border-radius: 0 0 4px 4px;
+    }
+
+    /* ── EMPLOYEE APP (dark) ── */
+    .emp-header {
+      background: #0f0f1a;
+      padding: 14px 16px 10px;
+      border-bottom: 1px solid #2a2a3e;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .emp-logo { font-size: 0.75rem; font-weight: 700; color: #9A29E2; letter-spacing: 0.05em; }
+    .emp-biz { font-size: 0.7rem; color: #6b7280; }
+    .emp-body { padding: 24px 20px; min-height: 320px; }
+    .emp-greeting { font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 4px; }
+    .emp-time { font-size: 0.75rem; color: #6b7280; margin-bottom: 24px; }
+    .pin-dots { display: flex; gap: 12px; justify-content: center; margin-bottom: 24px; }
+    .pin-dot { width: 14px; height: 14px; border-radius: 50%; background: #2a2a3e; border: 2px solid #4B00B2; }
+    .pin-dot.filled { background: linear-gradient(135deg, #4B00B2, #9A29E2); border-color: #9A29E2; }
+    .pin-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .pin-key {
+      background: #1e1e2e;
+      border: 1px solid #2a2a3e;
+      border-radius: 10px;
+      padding: 12px;
+      text-align: center;
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    .pin-key.highlight { background: linear-gradient(135deg, #4B00B2, #9A29E2); border-color: #9A29E2; }
+
+    /* ── OWNER DASHBOARD (light) ── */
+    .own-topbar {
+      background: #fff;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .own-logo { font-size: 0.75rem; font-weight: 700; color: #4B00B2; }
+    .own-nav { display: flex; gap: 12px; font-size: 0.7rem; color: #6b7280; }
+    .own-nav span.active { color: #4B00B2; font-weight: 600; }
+    .own-body { padding: 16px; background: #f7f4fc; min-height: 280px; }
+    .own-card { background: #fff; border-radius: 10px; padding: 12px 14px; margin-bottom: 10px; border: 1px solid #e5e7eb; }
+    .own-card-title { font-size: 0.7rem; font-weight: 700; color: #6b7280; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px; }
+    .staff-row { display: flex; align-items: center; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid #f3f4f6; font-size: 0.8rem; }
+    .staff-row:last-child { border-bottom: none; }
+    .staff-name { font-weight: 600; color: #1a1a2e; }
+    .staff-time { color: #6b7280; font-size: 0.72rem; }
+    .badge-in { background: #dcfce7; color: #166534; font-size: 0.65rem; font-weight: 700; padding: 2px 7px; border-radius: 99px; }
+    .badge-out { background: #f3f4f6; color: #6b7280; font-size: 0.65rem; padding: 2px 7px; border-radius: 99px; }
+    .stat-row { display: flex; gap: 8px; margin-bottom: 10px; }
+    .stat-box { flex: 1; background: #fff; border-radius: 8px; padding: 10px 12px; border: 1px solid #e5e7eb; }
+    .stat-num { font-size: 1.2rem; font-weight: 700; color: #4B00B2; }
+    .stat-lbl { font-size: 0.65rem; color: #6b7280; }
+
+    /* ── TIPS REPORT ── */
+    .tip-row { display: flex; align-items: center; justify-content: space-between; padding: 7px 0; border-bottom: 1px solid #f3f4f6; font-size: 0.8rem; }
+    .tip-row:last-child { border-bottom: none; }
+    .tip-name { font-weight: 600; }
+    .tip-hrs { color: #6b7280; font-size: 0.72rem; }
+    .tip-amt { font-weight: 700; color: #4B00B2; }
+    .tip-total { background: linear-gradient(135deg, #4B00B2, #9A29E2); border-radius: 8px; padding: 10px 14px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+    .tip-total-lbl { color: rgba(255,255,255,0.8); font-size: 0.72rem; }
+    .tip-total-amt { color: #fff; font-size: 1.1rem; font-weight: 700; }
+
+    /* ── LAYOUT HELPERS ── */
+    .row { display: flex; align-items: flex-end; gap: 2rem; flex-wrap: wrap; }
+    .split { display: flex; border-radius: 16px; overflow: hidden; box-shadow: 0 20px 60px rgba(74,0,178,0.2); width: 100%; max-width: 860px; }
+    .split-left { flex: 1; background: #fff; padding: 24px; }
+    .split-right { flex: 1; background: #0f0f1a; padding: 24px; }
+    .split-tag { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 12px; }
+    .split-tag.light { color: #4B00B2; }
+    .split-tag.dark { color: #9A29E2; }
+  </style>
+</head>
+<body>
+
+<h1>Kệ — Mockup Preview</h1>
+<p class="page-meta">Reference for designer · June 2026</p>
+
+<!-- ══ MOCKUP 1: HERO ══ -->
+<div class="mockup-block">
+  <div class="mockup-label">Image 1 · 1400 × 900px</div>
+  <div class="mockup-title">Hero Mockup — iPad + MacBook side by side</div>
+
+  <div class="row" style="align-items:center; background:#F7F4FC; padding:2.5rem; border-radius:20px;">
+
+    <!-- iPad (employee) -->
+    <div class="ipad-frame">
+      <div class="ipad-screen">
+        <div class="emp-header">
+          <div class="emp-logo">kē</div>
+          <div class="emp-biz">ABC Nail Salon</div>
+        </div>
+        <div class="emp-body">
+          <div class="emp-greeting">Hi, Lisa 👋</div>
+          <div class="emp-time">Mon Jun 16 · 9:02 AM</div>
+          <div class="pin-dots">
+            <div class="pin-dot filled"></div>
+            <div class="pin-dot filled"></div>
+            <div class="pin-dot"></div>
+            <div class="pin-dot"></div>
+          </div>
+          <div class="pin-grid">
+            <div class="pin-key">1</div><div class="pin-key">2</div><div class="pin-key">3</div>
+            <div class="pin-key">4</div><div class="pin-key highlight">5</div><div class="pin-key">6</div>
+            <div class="pin-key">7</div><div class="pin-key">8</div><div class="pin-key">9</div>
+            <div class="pin-key" style="grid-column:2">0</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MacBook (owner) -->
+    <div>
+      <div class="macbook-frame">
+        <div class="macbook-screen">
+          <div class="own-topbar">
+            <div class="own-logo">kē Timesheet</div>
+            <div class="own-nav">
+              <span class="active">Dashboard</span>
+              <span>Employees</span>
+              <span>Tips</span>
+              <span>Reports</span>
+            </div>
+          </div>
+          <div class="own-body">
+            <div class="stat-row">
+              <div class="stat-box"><div class="stat-num">3</div><div class="stat-lbl">Clocked in</div></div>
+              <div class="stat-box"><div class="stat-num">1</div><div class="stat-lbl">Off today</div></div>
+              <div class="stat-box"><div class="stat-num">24h</div><div class="stat-lbl">Hours this week</div></div>
+            </div>
+            <div class="own-card">
+              <div class="own-card-title">Today · Live Status</div>
+              <div class="staff-row"><div><div class="staff-name">Lisa Nguyen</div><div class="staff-time">Clocked in 9:00 AM</div></div><span class="badge-in">In</span></div>
+              <div class="staff-row"><div><div class="staff-name">Anna Tran</div><div class="staff-time">Clocked in 9:15 AM</div></div><span class="badge-in">In</span></div>
+              <div class="staff-row"><div><div class="staff-name">Jenny Le</div><div class="staff-time">Clocked in 10:00 AM</div></div><span class="badge-in">In</span></div>
+              <div class="staff-row"><div><div class="staff-name">Mai Pham</div><div class="staff-time">Day off</div></div><span class="badge-out">Off</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="macbook-base"></div>
+      <div class="macbook-stand"></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══ MOCKUP 2: TIPS REPORT ══ -->
+<div class="mockup-block">
+  <div class="mockup-label">Image 2 · 700 × 480px</div>
+  <div class="mockup-title">Feature — Tips Report</div>
+
+  <div style="background:#F7F4FC; padding:2rem; border-radius:16px; display:inline-block; min-width:400px;">
+    <div class="own-card" style="max-width:380px;">
+      <div class="tip-total">
+        <div class="tip-total-lbl">Tip pool · Jun 16</div>
+        <div class="tip-total-amt">$180.00</div>
+      </div>
+      <div class="own-card-title">Distribution by hours</div>
+      <div class="tip-row">
+        <div><div class="tip-name">Lisa Nguyen</div><div class="tip-hrs">8h · 32%</div></div>
+        <div class="tip-amt">$57.60</div>
+      </div>
+      <div class="tip-row">
+        <div><div class="tip-name">Anna Tran</div><div class="tip-hrs">7h · 28%</div></div>
+        <div class="tip-amt">$50.40</div>
+      </div>
+      <div class="tip-row">
+        <div><div class="tip-name">Jenny Le</div><div class="tip-hrs">6h · 24%</div></div>
+        <div class="tip-amt">$43.20</div>
+      </div>
+      <div class="tip-row">
+        <div><div class="tip-name">Mai Pham</div><div class="tip-hrs">4h · 16%</div></div>
+        <div class="tip-amt">$28.80</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ MOCKUP 3: SPLIT VIEW ══ -->
+<div class="mockup-block">
+  <div class="mockup-label">Image 3 · 1400 × 560px</div>
+  <div class="mockup-title">Owner vs Employee — Split View</div>
+
+  <div class="split">
+    <!-- Left: Owner -->
+    <div class="split-left">
+      <div class="split-tag light">Owner · Light mode</div>
+      <div class="stat-row">
+        <div class="stat-box"><div class="stat-num">3</div><div class="stat-lbl">Clocked in</div></div>
+        <div class="stat-box"><div class="stat-num">$180</div><div class="stat-lbl">Tips today</div></div>
+      </div>
+      <div class="own-card">
+        <div class="own-card-title">Live status</div>
+        <div class="staff-row"><div><div class="staff-name">Lisa</div><div class="staff-time">9:00 AM</div></div><span class="badge-in">In</span></div>
+        <div class="staff-row"><div><div class="staff-name">Anna</div><div class="staff-time">9:15 AM</div></div><span class="badge-in">In</span></div>
+        <div class="staff-row"><div><div class="staff-name">Jenny</div><div class="staff-time">10:00 AM</div></div><span class="badge-in">In</span></div>
+      </div>
+    </div>
+    <!-- Right: Employee -->
+    <div class="split-right">
+      <div class="split-tag dark">Employee · Dark mode</div>
+      <div style="color:#fff; font-size:1rem; font-weight:700; margin-bottom:4px;">Hi, Lisa 👋</div>
+      <div style="color:#6b7280; font-size:0.75rem; margin-bottom:20px;">Enter your PIN to clock in</div>
+      <div class="pin-dots" style="justify-content:flex-start;">
+        <div class="pin-dot filled"></div>
+        <div class="pin-dot filled"></div>
+        <div class="pin-dot"></div>
+        <div class="pin-dot"></div>
+      </div>
+      <div class="pin-grid" style="max-width:200px; margin-top:16px;">
+        <div class="pin-key">1</div><div class="pin-key">2</div><div class="pin-key">3</div>
+        <div class="pin-key">4</div><div class="pin-key highlight">5</div><div class="pin-key">6</div>
+        <div class="pin-key">7</div><div class="pin-key">8</div><div class="pin-key">9</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
